@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventario - Papelería</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">Papelería</div>
+    <nav id="nav" aria-label="Principal"></nav>
+    <div id="user-box" class="user-box"></div>
+  </aside>
+  <main>
+    <h1>Inventario</h1>
+    <div id="message" class="message" role="status"></div>
+    <section class="panel" id="entry-panel">
+      <h2>Registrar ingreso de mercadería</h2>
+      <form id="entry-form" class="grid-form">
+        <label>Producto <select id="entry-product" required></select></label>
+        <label>Cantidad que ingresa <input id="entry-quantity" type="number" min="1" step="1" value="1" required></label>
+        <label>Nota (opcional) <input id="entry-note" maxlength="100"></label>
+        <div class="actions"><button type="submit">Registrar ingreso</button></div>
+      </form>
+    </section>
+    <section class="panel">
+      <h2>Alertas de stock</h2>
+      <ul id="alerts" class="alert-list"></ul>
+    </section>
+    <section class="panel">
+      <h2>Estado del inventario</h2>
+      <div class="inline-form">
+        <label>Filtrar por estado
+          <select id="filter-status">
+            <option value="">Todos</option><option>Disponible</option><option>Stock bajo</option><option>Sin stock</option>
+          </select>
+        </label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Código</th><th>Producto</th><th class="num">Stock actual</th><th class="num">Stock mínimo</th><th>Estado</th></tr></thead>
+          <tbody id="inventory-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="js/app.js"></script>
+<script src="js/inventory.js"></script>
+</body>
+</html>

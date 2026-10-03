@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ventas - Papelería</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">Papelería</div>
+    <nav id="nav" aria-label="Principal"></nav>
+    <div id="user-box" class="user-box"></div>
+  </aside>
+  <main>
+    <h1>Ventas</h1>
+    <div id="message" class="message" role="status"></div>
+    <section class="panel">
+      <h2>Nueva venta</h2>
+      <label style="max-width:420px;margin-bottom:.9rem">Cliente <select id="client"></select></label>
+      <form id="add-form" class="grid-form">
+        <label>Producto <select id="product" required></select></label>
+        <label>Cantidad <input id="quantity" type="number" min="1" step="1" value="1" required></label>
+        <div class="actions"><button type="submit">Agregar producto</button></div>
+      </form>
+    </section>
+    <section class="panel">
+      <h2>Detalle de la venta</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Producto</th><th class="num">Cantidad</th><th class="num">Precio unitario</th><th class="num">Subtotal</th><th></th></tr></thead>
+          <tbody id="cart-body"></tbody>
+          <tfoot><tr><td colspan="3" class="num">Total</td><td class="num" id="total">$0.00</td><td></td></tr></tfoot>
+        </table>
+      </div>
+      <p><button type="button" id="register-btn" disabled>Registrar venta</button></p>
+    </section>
+  </main>
+</div>
+<script src="js/app.js"></script>
+<script src="js/sales.js"></script>
+</body>
+</html>

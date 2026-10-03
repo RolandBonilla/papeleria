@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reportes - Papelería</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">Papelería</div>
+    <nav id="nav" aria-label="Principal"></nav>
+    <div id="user-box" class="user-box"></div>
+  </aside>
+  <main>
+    <h1>Reportes</h1>
+    <div id="message" class="message" role="status"></div>
+    <section class="panel">
+      <h2>Ventas realizadas</h2>
+      <form id="filter-form" class="inline-form">
+        <label>Desde <input type="date" id="date-from"></label>
+        <label>Hasta <input type="date" id="date-to"></label>
+        <button type="submit">Filtrar</button>
+      </form>
+      <p id="sales-summary"></p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>N.º</th><th>Fecha</th><th>Cliente</th><th>Productos</th><th class="num">Total</th></tr></thead>
+          <tbody id="sales-body"></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>Productos con stock bajo</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Código</th><th>Producto</th><th class="num">Stock actual</th><th class="num">Stock mínimo</th><th>Estado</th></tr></thead>
+          <tbody id="low-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="js/app.js"></script>
+<script src="js/reports.js"></script>
+</body>
+</html>
